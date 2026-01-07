@@ -1,0 +1,209 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Thai (`th`).
+class AppLocalizationsTh extends AppLocalizations {
+  AppLocalizationsTh([String locale = 'th']) : super(locale);
+
+  @override
+  String get appTitle => 'ตัวเตือนงาน';
+
+  @override
+  String get welcomeMessage => 'ยินดีต้อนรับสู่ตัวเตือนงาน';
+
+  @override
+  String get login => 'เข้าสู่ระบบ';
+
+  @override
+  String get register => 'ลงทะเบียน';
+
+  @override
+  String get email => 'อีเมล';
+
+  @override
+  String get password => 'รหัสผ่าน';
+
+  @override
+  String get signInWithGoogle => 'ลงชื่อเข้าใช้ด้วย Google';
+
+  @override
+  String get signInWithGooglePrompt => 'คุณยังสามารถลงชื่อเข้าใช้หรือสร้างบัญชีใหม่ด้วย Google:';
+
+  @override
+  String get theme => 'ธีม';
+
+  @override
+  String get language => 'ภาษา';
+
+  @override
+  String get logout => 'ออกจากระบบ';
+
+  @override
+  String get testNotification => 'ทดสอบการแจ้งเตือน';
+
+  @override
+  String get downloadTasks => 'ดาวน์โหลดงาน';
+
+  @override
+  String get testFirestore => 'ทดสอบ Firestore';
+
+  @override
+  String get addTask => 'เพิ่มงาน';
+
+  @override
+  String get addNewTask => 'เพิ่มงานใหม่';
+
+  @override
+  String get taskTitle => 'ชื่องาน';
+
+  @override
+  String get dueDateFormat => 'วันที่ครบกำหนด (ปปปป-ดด-วว ชช:นท)';
+
+  @override
+  String get description => 'คำอธิบาย';
+
+  @override
+  String get repeatTask => 'งานซ้ำ';
+
+  @override
+  String get repeatEvery => 'ซ้ำทุก';
+
+  @override
+  String get repeatsEvery => 'ทำซ้ำทุก';
+
+  @override
+  String get yourTasks => 'งานของคุณ';
+
+  @override
+  String get noTasksAvailable => 'ไม่มีงาน';
+
+  @override
+  String get error => 'เกิดข้อผิดพลาด';
+
+  @override
+  String get due => 'ครบกำหนด';
+
+  @override
+  String get sortBy => 'เรียงตาม';
+
+  @override
+  String get filter => 'กรอง';
+
+  @override
+  String get sortDueDate => 'วันที่ครบกำหนด';
+
+  @override
+  String get sortStatus => 'สถานะ';
+
+  @override
+  String get sortTitle => 'ชื่อ';
+
+  @override
+  String get filterAll => 'ทั้งหมด';
+
+  @override
+  String get filterPending => 'รอดำเนินการ';
+
+  @override
+  String get filterOverdue => 'เลยกำหนด';
+
+  @override
+  String get filterCompleted => 'เสร็จสิ้น';
+
+  @override
+  String get repeatMinutes => 'นาที';
+
+  @override
+  String get repeatHours => 'ชั่วโมง';
+
+  @override
+  String get repeatDays => 'วัน';
+
+  @override
+  String get taskAddedSuccessfully => 'เพิ่มงานสำเร็จ';
+
+  @override
+  String get failedToAddTask => 'เพิ่มงานล้มเหลว';
+
+  @override
+  String get taskUpdatedSuccessfully => 'อัปเดตงานสำเร็จ';
+
+  @override
+  String get failedToUpdateTask => 'อัปเดตงานล้มเหลว';
+
+  @override
+  String get taskDeletedSuccessfully => 'ลบงานสำเร็จ';
+
+  @override
+  String get failedToDeleteTask => 'ลบงานล้มเหลว';
+
+  @override
+  String get taskOverdue => 'งานเกินกำหนด';
+
+  @override
+  String get reminder => 'การเตือน';
+
+  @override
+  String get dismiss => 'ปิด';
+
+  @override
+  String get tasksDownloaded => 'ดาวน์โหลดงานเป็น tasks.json แล้ว';
+
+  @override
+  String get downloadWebOnly => 'การดาวน์โหลดใช้ได้เฉพาะบนเว็บเท่านั้น';
+
+  @override
+  String get invalidDateFormat => 'รูปแบบวันที่ไม่ถูกต้อง! ใช้ YYYY-MM-DD HH:MM';
+
+  @override
+  String get editTask => 'แก้ไขงาน';
+
+  @override
+  String get update => 'อัปเดต';
+
+  @override
+  String get cancel => 'ยกเลิก';
+
+  @override
+  String get deleteTask => 'ลบงาน';
+
+  @override
+  String confirmDeleteTask(Object taskTitle) {
+    return 'คุณแน่ใจหรือไม่ว่าต้องการลบ \'$taskTitle\'?';
+  }
+
+  @override
+  String get delete => 'ลบ';
+
+  @override
+  String get testDocumentWritten => 'เขียนเอกสารทดสอบลงใน Firestore แล้ว';
+
+  @override
+  String errorWritingTestDocument(Object error) {
+    return 'ข้อผิดพลาดในการเขียนเอกสารทดสอบ: $error';
+  }
+
+  @override
+  String get signOut => 'ออกจากระบบ';
+
+  @override
+  String get confirmSignOut => 'คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบ?';
+
+  @override
+  String get failedToSignOut => 'ไม่สามารถออกจากระบบได้ กรุณาลองใหม่';
+
+  @override
+  String get accountExistsError => 'บัญชีที่มีอีเมลนี้มีอยู่แล้ว กรุณาเข้าสู่ระบบหรือเชื่อมโยงบัญชีของคุณ';
+
+  @override
+  String get filterBy => 'กรองตาม';
+
+  @override
+  String get taskUpcoming => 'งานที่จะเกิดขึ้น';
+
+  @override
+  String get failedToCheckTasks => 'ตรวจสอบงานไม่สำเร็จ';
+}
