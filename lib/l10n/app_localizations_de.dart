@@ -60,7 +60,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get taskTitle => 'Aufgabentitel';
 
   @override
-  String get dueDateFormat => 'Fälligkeitsdatum (JJJJ-MM-TT HH:MM)';
+  String get dueDateFormat => 'Fälligkeitsdatum (YYYY-MM-DD HH:MM)';
 
   @override
   String get description => 'Beschreibung';
@@ -69,7 +69,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get repeatTask => 'Aufgabe wiederholen';
 
   @override
-  String get repeatEvery => 'Wiederholen alle';
+  String get repeatEvery => 'Wiederholen alle (Zahl)';
 
   @override
   String get repeatsEvery => 'Wiederholt sich alle';
@@ -78,10 +78,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get yourTasks => 'Ihre Aufgaben';
 
   @override
-  String get noTasksAvailable => 'Keine Aufgaben verfügbar';
+  String get noTasksAvailable => 'Keine Aufgaben verfügbar.';
 
   @override
-  String get error => 'Ein Fehler ist aufgetreten';
+  String get error => 'Fehler';
 
   @override
   String get due => 'Fällig';
@@ -126,19 +126,19 @@ class AppLocalizationsDe extends AppLocalizations {
   String get taskAddedSuccessfully => 'Aufgabe erfolgreich hinzugefügt';
 
   @override
-  String get failedToAddTask => 'Aufgabe konnte nicht hinzugefügt werden';
+  String get failedToAddTask => 'Fehler beim Hinzufügen der Aufgabe. Bitte versuchen Sie es erneut.';
 
   @override
   String get taskUpdatedSuccessfully => 'Aufgabe erfolgreich aktualisiert';
 
   @override
-  String get failedToUpdateTask => 'Aufgabe konnte nicht aktualisiert werden';
+  String get failedToUpdateTask => 'Fehler beim Aktualisieren der Aufgabe. Bitte versuchen Sie es erneut.';
 
   @override
   String get taskDeletedSuccessfully => 'Aufgabe erfolgreich gelöscht';
 
   @override
-  String get failedToDeleteTask => 'Aufgabe konnte nicht gelöscht werden';
+  String get failedToDeleteTask => 'Fehler beim Löschen der Aufgabe. Bitte versuchen Sie es erneut.';
 
   @override
   String get taskOverdue => 'Aufgabe überfällig';
@@ -206,4 +206,55 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get failedToCheckTasks => 'Aufgaben konnten nicht überprüft werden';
+
+  @override
+  String get systemTheme => 'System';
+
+  @override
+  String get brightTheme => 'Hell';
+
+  @override
+  String get darkTheme => 'Dunkel';
+
+  @override
+  String get oceanTheme => 'Ozean';
+
+  @override
+  String get forestTheme => 'Wald';
+
+  @override
+  String get sunsetTheme => 'Sonnenuntergang';
+
+  @override
+  String get loginButton => 'Anmelden';
+
+  @override
+  String get sortByDueDate => 'Fälligkeitsdatum';
+
+  @override
+  String get sortByStatus => 'Status';
+
+  @override
+  String get sortByTitle => 'Titel';
+
+  @override
+  String get forgotPassword => 'Passwort vergessen?';
+
+  @override
+  String get resetPassword => 'Passwort zurücksetzen';
+
+  @override
+  String get enterEmailToReset => 'Geben Sie Ihre E-Mail ein, um das Passwort zurückzusetzen';
+
+  @override
+  String get resetPasswordEmailSent => 'E-Mail zum Zurücksetzen des Passworts gesendet';
+
+  @override
+  String get sendResetLink => 'Link senden';
+
+  @override
+  String get failedToSendResetEmail => 'Fehler beim Senden der E-Mail. Bitte überprüfen Sie Ihre E-Mail-Adresse.';
+
+  @override
+  String get emailRequired => 'E-Mail ist erforderlich';
 }

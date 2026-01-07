@@ -60,16 +60,16 @@ class AppLocalizationsTh extends AppLocalizations {
   String get taskTitle => 'ชื่องาน';
 
   @override
-  String get dueDateFormat => 'วันที่ครบกำหนด (ปปปป-ดด-วว ชช:นท)';
+  String get dueDateFormat => 'วันที่ครบกำหนด (YYYY-MM-DD HH:MM)';
 
   @override
   String get description => 'คำอธิบาย';
 
   @override
-  String get repeatTask => 'งานซ้ำ';
+  String get repeatTask => 'งานที่ต้องทำซ้ำ';
 
   @override
-  String get repeatEvery => 'ซ้ำทุก';
+  String get repeatEvery => 'ทำซ้ำทุก (ตัวเลข)';
 
   @override
   String get repeatsEvery => 'ทำซ้ำทุก';
@@ -78,10 +78,10 @@ class AppLocalizationsTh extends AppLocalizations {
   String get yourTasks => 'งานของคุณ';
 
   @override
-  String get noTasksAvailable => 'ไม่มีงาน';
+  String get noTasksAvailable => 'ไม่มีงานที่สามารถใช้งานได้';
 
   @override
-  String get error => 'เกิดข้อผิดพลาด';
+  String get error => 'ข้อผิดพลาด';
 
   @override
   String get due => 'ครบกำหนด';
@@ -111,7 +111,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get filterOverdue => 'เลยกำหนด';
 
   @override
-  String get filterCompleted => 'เสร็จแล้ว';
+  String get filterCompleted => 'เสร็จสิ้น';
 
   @override
   String get repeatMinutes => 'นาที';
@@ -123,25 +123,25 @@ class AppLocalizationsTh extends AppLocalizations {
   String get repeatDays => 'วัน';
 
   @override
-  String get taskAddedSuccessfully => 'เพิ่มงานสำเร็จ';
+  String get taskAddedSuccessfully => 'เพิ่มงานสำเร็จแล้ว';
 
   @override
-  String get failedToAddTask => 'เพิ่มงานล้มเหลว';
+  String get failedToAddTask => 'ไม่สามารถเพิ่มงานได้ กรุณาลองใหม่';
 
   @override
-  String get taskUpdatedSuccessfully => 'อัปเดตงานสำเร็จ';
+  String get taskUpdatedSuccessfully => 'อัปเดตงานสำเร็จแล้ว';
 
   @override
-  String get failedToUpdateTask => 'อัปเดตงานล้มเหลว';
+  String get failedToUpdateTask => 'ไม่สามารถอัปเดตงานได้ กรุณาลองใหม่';
 
   @override
-  String get taskDeletedSuccessfully => 'ลบงานสำเร็จ';
+  String get taskDeletedSuccessfully => 'ลบงานสำเร็จแล้ว';
 
   @override
-  String get failedToDeleteTask => 'ลบงานล้มเหลว';
+  String get failedToDeleteTask => 'ไม่สามารถลบงานได้ กรุณาลองใหม่';
 
   @override
-  String get taskOverdue => 'งานเกินกำหนด';
+  String get taskOverdue => 'งานเลยกำหนด';
 
   @override
   String get reminder => 'การเตือน';
@@ -236,4 +236,25 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get sortByTitle => 'หัวข้อ';
+
+  @override
+  String get forgotPassword => 'ลืมรหัสผ่าน?';
+
+  @override
+  String get resetPassword => 'รีเซ็ตรหัสผ่าน';
+
+  @override
+  String get enterEmailToReset => 'ใส่อีเมลของคุณเพื่อรีเซ็ตรหัสผ่าน';
+
+  @override
+  String get resetPasswordEmailSent => 'ส่งอีเมลรีเซ็ตรหัสผ่านแล้ว';
+
+  @override
+  String get sendResetLink => 'ส่งลิงก์รีเซ็ต';
+
+  @override
+  String get failedToSendResetEmail => 'ไม่สามารถส่งอีเมลรีเซ็ตได้ กรุณาตรวจสอบอีเมลของคุณ';
+
+  @override
+  String get emailRequired => 'กรุณาระบุอีเมล';
 }

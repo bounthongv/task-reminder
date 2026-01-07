@@ -45,7 +45,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get testNotification => 'Test Notification';
 
   @override
-  String get downloadTasks => 'Download tasks';
+  String get downloadTasks => 'Download Tasks';
 
   @override
   String get testFirestore => 'Test Firestore';
@@ -54,7 +54,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get addTask => 'Add Task';
 
   @override
-  String get addNewTask => 'Add New Task';
+  String get addNewTask => 'Add a New Task';
 
   @override
   String get taskTitle => 'Task Title';
@@ -69,7 +69,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get repeatTask => 'Repeat Task';
 
   @override
-  String get repeatEvery => 'Repeat Every';
+  String get repeatEvery => 'Repeat Every (number)';
 
   @override
   String get repeatsEvery => 'Repeats every';
@@ -78,10 +78,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get yourTasks => 'Your Tasks';
 
   @override
-  String get noTasksAvailable => 'No tasks available';
+  String get noTasksAvailable => 'No tasks available.';
 
   @override
-  String get error => 'An error occurred';
+  String get error => 'Error';
 
   @override
   String get due => 'Due';
@@ -126,22 +126,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get taskAddedSuccessfully => 'Task added successfully';
 
   @override
-  String get failedToAddTask => 'Failed to add task';
+  String get failedToAddTask => 'Failed to add task. Please try again.';
 
   @override
   String get taskUpdatedSuccessfully => 'Task updated successfully';
 
   @override
-  String get failedToUpdateTask => 'Failed to update task';
+  String get failedToUpdateTask => 'Failed to update task. Please try again.';
 
   @override
   String get taskDeletedSuccessfully => 'Task deleted successfully';
 
   @override
-  String get failedToDeleteTask => 'Failed to delete task';
+  String get failedToDeleteTask => 'Failed to delete task. Please try again.';
 
   @override
-  String get taskOverdue => 'Task overdue';
+  String get taskOverdue => 'Task Overdue';
 
   @override
   String get reminder => 'Reminder';
@@ -236,4 +236,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sortByTitle => 'Title';
+
+  @override
+  String get forgotPassword => 'Forgot Password?';
+
+  @override
+  String get resetPassword => 'Reset Password';
+
+  @override
+  String get enterEmailToReset => 'Enter your email to reset password';
+
+  @override
+  String get resetPasswordEmailSent => 'Password reset email sent';
+
+  @override
+  String get sendResetLink => 'Send Reset Link';
+
+  @override
+  String get failedToSendResetEmail => 'Failed to send reset email. Please check your email address.';
+
+  @override
+  String get emailRequired => 'Email is required';
 }

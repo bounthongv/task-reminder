@@ -42,14 +42,75 @@ class LoginScreen extends StatelessWidget {
           email: emailController.text.trim(),
           password: passwordController.text.trim(),
         );
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Registration successful! Please log in.')),
-        );
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(AppLocalizations.of(context)!.error)),
         );
       }
+    }
+
+    Future<void> resetPassword() async {
+      final TextEditingController resetEmailController = TextEditingController();
+      if (emailController.text.isNotEmpty) {
+        resetEmailController.text = emailController.text;
+      }
+
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(AppLocalizations.of(context)!.resetPassword),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(AppLocalizations.of(context)!.enterEmailToReset),
+              const SizedBox(height: 10),
+              TextField(
+                controller: resetEmailController,
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.email,
+                  border: const OutlineInputBorder(),
+                ),
+                keyboardType: TextInputType.emailAddress,
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(AppLocalizations.of(context)!.cancel),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                if (resetEmailController.text.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(AppLocalizations.of(context)!.emailRequired)),
+                  );
+                  return;
+                }
+                try {
+                  await FirebaseAuth.instance.sendPasswordResetEmail(
+                    email: resetEmailController.text.trim(),
+                  );
+                  if (context.mounted) {
+                    Navigator.of(context).pop();
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text(AppLocalizations.of(context)!.resetPasswordEmailSent)),
+                    );
+                  }
+                } catch (e) {
+                   if (context.mounted) {
+                    Navigator.of(context).pop();
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text(AppLocalizations.of(context)!.failedToSendResetEmail)),
+                    );
+                   }
+                }
+              },
+              child: Text(AppLocalizations.of(context)!.sendResetLink),
+            ),
+          ],
+        ),
+      );
     }
 
     Future<void> signInWithGoogle() async {
@@ -111,6 +172,13 @@ class LoginScreen extends StatelessWidget {
                     prefixIcon: const Icon(Icons.lock),
                   ),
                   obscureText: true,
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: resetPassword,
+                    child: Text(AppLocalizations.of(context)!.forgotPassword),
+                  ),
                 ),
                 const SizedBox(height: 24),
                 SizedBox(

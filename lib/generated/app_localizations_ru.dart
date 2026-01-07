@@ -69,7 +69,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get repeatTask => 'Повторять задачу';
 
   @override
-  String get repeatEvery => 'Повторять каждые';
+  String get repeatEvery => 'Повторять каждые (число)';
 
   @override
   String get repeatsEvery => 'Повторяется каждые';
@@ -78,10 +78,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get yourTasks => 'Ваши задачи';
 
   @override
-  String get noTasksAvailable => 'Нет доступных задач';
+  String get noTasksAvailable => 'Нет доступных задач.';
 
   @override
-  String get error => 'Произошла ошибка';
+  String get error => 'Ошибка';
 
   @override
   String get due => 'Срок';
@@ -105,13 +105,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get filterAll => 'Все';
 
   @override
-  String get filterPending => 'Ожидает';
+  String get filterPending => 'Ожидающие';
 
   @override
-  String get filterOverdue => 'Просрочено';
+  String get filterOverdue => 'Просроченные';
 
   @override
-  String get filterCompleted => 'Завершено';
+  String get filterCompleted => 'Завершенные';
 
   @override
   String get repeatMinutes => 'Минуты';
@@ -126,19 +126,19 @@ class AppLocalizationsRu extends AppLocalizations {
   String get taskAddedSuccessfully => 'Задача успешно добавлена';
 
   @override
-  String get failedToAddTask => 'Не удалось добавить задачу';
+  String get failedToAddTask => 'Не удалось добавить задачу. Пожалуйста, попробуйте снова.';
 
   @override
   String get taskUpdatedSuccessfully => 'Задача успешно обновлена';
 
   @override
-  String get failedToUpdateTask => 'Не удалось обновить задачу';
+  String get failedToUpdateTask => 'Не удалось обновить задачу. Пожалуйста, попробуйте снова.';
 
   @override
   String get taskDeletedSuccessfully => 'Задача успешно удалена';
 
   @override
-  String get failedToDeleteTask => 'Не удалось удалить задачу';
+  String get failedToDeleteTask => 'Не удалось удалить задачу. Пожалуйста, попробуйте снова.';
 
   @override
   String get taskOverdue => 'Просроченная задача';
@@ -236,4 +236,25 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get sortByTitle => 'Название';
+
+  @override
+  String get forgotPassword => 'Забыли пароль?';
+
+  @override
+  String get resetPassword => 'Сброс пароля';
+
+  @override
+  String get enterEmailToReset => 'Введите ваш email для сброса пароля';
+
+  @override
+  String get resetPasswordEmailSent => 'Письмо для сброса пароля отправлено';
+
+  @override
+  String get sendResetLink => 'Отправить ссылку';
+
+  @override
+  String get failedToSendResetEmail => 'Не удалось отправить письмо. Проверьте ваш email.';
+
+  @override
+  String get emailRequired => 'Email обязателен';
 }

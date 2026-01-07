@@ -176,7 +176,7 @@ abstract class AppLocalizations {
   /// No description provided for @downloadTasks.
   ///
   /// In en, this message translates to:
-  /// **'Download tasks'**
+  /// **'Download Tasks'**
   String get downloadTasks;
 
   /// No description provided for @testFirestore.
@@ -194,7 +194,7 @@ abstract class AppLocalizations {
   /// No description provided for @addNewTask.
   ///
   /// In en, this message translates to:
-  /// **'Add New Task'**
+  /// **'Add a New Task'**
   String get addNewTask;
 
   /// No description provided for @taskTitle.
@@ -224,7 +224,7 @@ abstract class AppLocalizations {
   /// No description provided for @repeatEvery.
   ///
   /// In en, this message translates to:
-  /// **'Repeat Every'**
+  /// **'Repeat Every (number)'**
   String get repeatEvery;
 
   /// No description provided for @repeatsEvery.
@@ -242,13 +242,13 @@ abstract class AppLocalizations {
   /// No description provided for @noTasksAvailable.
   ///
   /// In en, this message translates to:
-  /// **'No tasks available'**
+  /// **'No tasks available.'**
   String get noTasksAvailable;
 
   /// No description provided for @error.
   ///
   /// In en, this message translates to:
-  /// **'An error occurred'**
+  /// **'Error'**
   String get error;
 
   /// No description provided for @due.
@@ -338,7 +338,7 @@ abstract class AppLocalizations {
   /// No description provided for @failedToAddTask.
   ///
   /// In en, this message translates to:
-  /// **'Failed to add task'**
+  /// **'Failed to add task. Please try again.'**
   String get failedToAddTask;
 
   /// No description provided for @taskUpdatedSuccessfully.
@@ -350,7 +350,7 @@ abstract class AppLocalizations {
   /// No description provided for @failedToUpdateTask.
   ///
   /// In en, this message translates to:
-  /// **'Failed to update task'**
+  /// **'Failed to update task. Please try again.'**
   String get failedToUpdateTask;
 
   /// No description provided for @taskDeletedSuccessfully.
@@ -362,13 +362,13 @@ abstract class AppLocalizations {
   /// No description provided for @failedToDeleteTask.
   ///
   /// In en, this message translates to:
-  /// **'Failed to delete task'**
+  /// **'Failed to delete task. Please try again.'**
   String get failedToDeleteTask;
 
   /// No description provided for @taskOverdue.
   ///
   /// In en, this message translates to:
-  /// **'Task overdue'**
+  /// **'Task Overdue'**
   String get taskOverdue;
 
   /// No description provided for @reminder.
@@ -550,6 +550,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Title'**
   String get sortByTitle;
+
+  /// No description provided for @forgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password?'**
+  String get forgotPassword;
+
+  /// No description provided for @resetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Password'**
+  String get resetPassword;
+
+  /// No description provided for @enterEmailToReset.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email to reset password'**
+  String get enterEmailToReset;
+
+  /// No description provided for @resetPasswordEmailSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Password reset email sent'**
+  String get resetPasswordEmailSent;
+
+  /// No description provided for @sendResetLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Reset Link'**
+  String get sendResetLink;
+
+  /// No description provided for @failedToSendResetEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to send reset email. Please check your email address.'**
+  String get failedToSendResetEmail;
+
+  /// No description provided for @emailRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Email is required'**
+  String get emailRequired;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

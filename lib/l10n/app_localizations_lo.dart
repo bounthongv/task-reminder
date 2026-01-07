@@ -51,25 +51,25 @@ class AppLocalizationsLo extends AppLocalizations {
   String get testFirestore => 'ທົດສອບ Firestore';
 
   @override
-  String get addTask => 'ເພີ່ມໜ້າທີ່';
+  String get addTask => 'ເພີ່ມວຽກ';
 
   @override
-  String get addNewTask => 'ເພີ່ມໜ້າທີ່ໃໝ່';
+  String get addNewTask => 'ເພີ່ມວຽກໃໝ່';
 
   @override
-  String get taskTitle => 'ຊື່ໜ້າທີ່';
+  String get taskTitle => 'ຊື່ວຽກ';
 
   @override
-  String get dueDateFormat => 'ວັນທີ່ຄົບກຳນົດ (ປປປປ-ດດ-ວວ ຊຊ:ນທ)';
+  String get dueDateFormat => 'ວັນທີ່ຄົບກຳນົດ (YYYY-MM-DD HH:MM)';
 
   @override
   String get description => 'ລາຍລະອຽດ';
 
   @override
-  String get repeatTask => 'ໜ້າທີ່ຊ້ຳ';
+  String get repeatTask => 'ວຽກທີ່ຕ້ອງເຮັດຊ້ຳ';
 
   @override
-  String get repeatEvery => 'ຊ້ຳທຸກໆ';
+  String get repeatEvery => 'ຊ້ຳທຸກໆ (ຕົວເລກ)';
 
   @override
   String get repeatsEvery => 'ຊ້ຳທຸກໆ';
@@ -78,10 +78,10 @@ class AppLocalizationsLo extends AppLocalizations {
   String get yourTasks => 'ວຽກຂອງທ່ານ';
 
   @override
-  String get noTasksAvailable => 'ບໍ່ມີໜ້າທີ່';
+  String get noTasksAvailable => 'ບໍ່ມີວຽກທີ່ສາມາດໃຊ້ໄດ້.';
 
   @override
-  String get error => 'ເກີດຂໍ້ຜິດພາດ';
+  String get error => 'ຂໍ້ຜິດພາດ';
 
   @override
   String get due => 'ຄົບກຳນົດ';
@@ -123,25 +123,25 @@ class AppLocalizationsLo extends AppLocalizations {
   String get repeatDays => 'ມື້';
 
   @override
-  String get taskAddedSuccessfully => 'ເພີ່ມໜ້າທີ່ສຳເລັດ';
+  String get taskAddedSuccessfully => 'ເພີ່ມວຽກສຳເລັດແລ້ວ';
 
   @override
-  String get failedToAddTask => 'ເພີ່ມໜ້າທີ່ລົ້ມເຫຼວ';
+  String get failedToAddTask => 'ບໍ່ສາມາດເພີ່ມວຽກໄດ້. ກະລຸນາລອງໃໝ່.';
 
   @override
-  String get taskUpdatedSuccessfully => 'ອັບເດດໜ້າທີ່ສຳເລັດ';
+  String get taskUpdatedSuccessfully => 'ອັບເດດວຽກສຳເລັດແລ້ວ';
 
   @override
-  String get failedToUpdateTask => 'ອັບເດດໜ້າທີ່ລົ້ມເຫຼວ';
+  String get failedToUpdateTask => 'ບໍ່ສາມາດອັບເດດວຽກໄດ້. ກະລຸນາລອງໃໝ່.';
 
   @override
-  String get taskDeletedSuccessfully => 'ລຶບໜ້າທີ່ສຳເລັດ';
+  String get taskDeletedSuccessfully => 'ລຶບວຽກສຳເລັດແລ້ວ';
 
   @override
-  String get failedToDeleteTask => 'ລຶບໜ້າທີ່ລົ້ມເຫຼວ';
+  String get failedToDeleteTask => 'ບໍ່ສາມາດລຶບວຽກໄດ້. ກະລຸນາລອງໃໝ່.';
 
   @override
-  String get taskOverdue => 'ວຽກຄ້າງຫຼາຍເກີນກຳນົດ';
+  String get taskOverdue => 'ວຽກເກີນຄົບກຳນົດ';
 
   @override
   String get reminder => 'ເຕືອນຄວາມຈຳ';
@@ -159,7 +159,7 @@ class AppLocalizationsLo extends AppLocalizations {
   String get invalidDateFormat => 'ຮູບແບບວັນທີ່ບໍ່ຖືກຕ້ອງ! ໃຊ້ YYYY-MM-DD HH:MM';
 
   @override
-  String get editTask => 'ແກ້ໄຂໜ້າທີ່';
+  String get editTask => 'ແກ້ໄຂວຽກ';
 
   @override
   String get update => 'ອັບເດດ';
@@ -206,4 +206,55 @@ class AppLocalizationsLo extends AppLocalizations {
 
   @override
   String get failedToCheckTasks => 'ການກວດສອບວຽກລົ້ມເຫຼວ';
+
+  @override
+  String get systemTheme => 'ລະບົບ';
+
+  @override
+  String get brightTheme => 'ສົດໃສ';
+
+  @override
+  String get darkTheme => 'ມືດ';
+
+  @override
+  String get oceanTheme => 'ມະຫາສະໝຸດ';
+
+  @override
+  String get forestTheme => 'ປ່າໄມ້';
+
+  @override
+  String get sunsetTheme => 'ຕາເວັນຕົກ';
+
+  @override
+  String get loginButton => 'ເຂົ້າສູ່ລະບົບ';
+
+  @override
+  String get sortByDueDate => 'ວັນທີໝົດກຳນົດ';
+
+  @override
+  String get sortByStatus => 'ສະຖານະ';
+
+  @override
+  String get sortByTitle => 'ຫົວຂໍ້';
+
+  @override
+  String get forgotPassword => 'ລືມລະຫັດຜ່ານ?';
+
+  @override
+  String get resetPassword => 'ຕັ້ງຄ່າລະຫັດຜ່ານໃໝ່';
+
+  @override
+  String get enterEmailToReset => 'ໃສ່ອີເມວຂອງທ່ານເພື່ອຕັ້ງຄ່າລະຫັດຜ່ານໃໝ່';
+
+  @override
+  String get resetPasswordEmailSent => 'ສົ່ງອີເມວຕັ້ງຄ່າລະຫັດຜ່ານແລ້ວ';
+
+  @override
+  String get sendResetLink => 'ສົ່ງລິ້ງຕັ້ງຄ່າໃໝ່';
+
+  @override
+  String get failedToSendResetEmail => 'ບໍ່ສາມາດສົ່ງອີເມວຕັ້ງຄ່າໃໝ່ໄດ້. ກະລຸນາກວດສອບອີເມວຂອງທ່ານ.';
+
+  @override
+  String get emailRequired => 'ຕ້ອງການອີເມວ';
 }
