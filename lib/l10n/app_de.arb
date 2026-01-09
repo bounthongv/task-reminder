@@ -94,5 +94,14 @@
   "resetPasswordEmailSent": "E-Mail zum Zurücksetzen des Passworts gesendet",
   "sendResetLink": "Link senden",
   "failedToSendResetEmail": "Fehler beim Senden der E-Mail. Bitte überprüfen Sie Ihre E-Mail-Adresse.",
-  "emailRequired": "E-Mail ist erforderlich"
+  "emailRequired": "E-Mail ist erforderlich",
+  "invalidEmailFormat": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+  "emailAlreadyExists": "Diese E-Mail ist bereits in unserem System registriert",
+  "emailAlreadyInUse": "Diese E-Mail wird bereits verwendet",
+  "weakPassword": "Das Passwort ist zu schwach. Bitte verwenden Sie ein stärkeres Passwort",
+  "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+  "registrationError": "Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut",
+  "userNotFound": "Kein Konto mit dieser E-Mail gefunden. Bitte überprüfen Sie Ihre E-Mail oder registrieren Sie ein neues Konto.",
+  "wrongPassword": "Falsches Passwort. Bitte versuchen Sie es erneut.",
+  "userDisabled": "Dieses Konto wurde deaktiviert. Bitte wenden Sie sich an den Support."
 }

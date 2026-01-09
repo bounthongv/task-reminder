@@ -20,6 +20,10 @@ dependencies:
     sdk: flutter
   google_sign_in: ^6.2.1
   audioplayers: ^5.2.1  # Use the latest version as of April 2025
+  flutter_local_notifications: ^19.5.0
+  timezone: ^0.10.1
+  window_manager: ^0.5.1
+  system_tray: ^2.0.3
 
 
 dev_dependencies:
@@ -33,7 +37,10 @@ flutter:
 
   assets:
     - assets/
-    - assets/sounds/notification.mp3  # Adjust the filen
+    - assets/app_icon.ico
+    - assets/sounds/notification.mp3
+    - assets/sounds/chime.mp3
+    - assets/sounds/beep.mp3
 
   fonts:
     - family: NotoSansLao

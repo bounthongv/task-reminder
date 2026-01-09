@@ -30,6 +30,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get signInWithGoogle => 'Mit Google anmelden';
 
   @override
+  String get registerWithGoogle => 'Register with Google';
+
+  @override
   String get signInWithGooglePrompt => 'Sie können sich auch mit Google anmelden oder ein neues Konto erstellen:';
 
   @override
@@ -257,4 +260,49 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get emailRequired => 'E-Mail ist erforderlich';
+
+  @override
+  String get invalidEmailFormat => 'Bitte geben Sie eine gültige E-Mail-Adresse ein';
+
+  @override
+  String get emailAlreadyExists => 'Diese E-Mail ist bereits in unserem System registriert';
+
+  @override
+  String get emailAlreadyInUse => 'Diese E-Mail wird bereits verwendet';
+
+  @override
+  String get weakPassword => 'Das Passwort ist zu schwach. Bitte verwenden Sie ein stärkeres Passwort';
+
+  @override
+  String get invalidEmail => 'Bitte geben Sie eine gültige E-Mail-Adresse ein';
+
+  @override
+  String get registrationError => 'Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut';
+
+  @override
+  String get userNotFound => 'Kein Konto mit dieser E-Mail gefunden. Bitte überprüfen Sie Ihre E-Mail oder registrieren Sie ein neues Konto.';
+
+  @override
+  String get wrongPassword => 'Falsches Passwort. Bitte versuchen Sie es erneut.';
+
+  @override
+  String get userDisabled => 'Dieses Konto wurde deaktiviert. Bitte wenden Sie sich an den Support.';
+
+  @override
+  String get noAccount => 'Don\'t have an account?';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account?';
+
+  @override
+  String get notificationSound => 'Notification Sound';
+
+  @override
+  String get soundDefault => 'Default';
+
+  @override
+  String get soundChime => 'Chime';
+
+  @override
+  String get soundBeep => 'Beep';
 }

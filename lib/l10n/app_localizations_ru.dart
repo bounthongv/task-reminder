@@ -257,4 +257,37 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get emailRequired => 'Email обязателен';
+
+  @override
+  String get invalidEmailFormat => 'Пожалуйста, введите действительный адрес электронной почты';
+
+  @override
+  String get emailAlreadyExists => 'Этот адрес электронной почты уже зарегистрирован в нашей системе';
+
+  @override
+  String get emailAlreadyInUse => 'Этот адрес электронной почты уже используется';
+
+  @override
+  String get weakPassword => 'Пароль слишком слабый. Пожалуйста, используйте более надежный пароль';
+
+  @override
+  String get invalidEmail => 'Пожалуйста, введите действительный адрес электронной почты';
+
+  @override
+  String get registrationError => 'Регистрация не удалась. Пожалуйста, попробуйте еще раз';
+
+  @override
+  String get userNotFound => 'Учетная запись с этим адресом электронной почты не найдена. Пожалуйста, проверьте ваш email или зарегистрируйте новую учетную запись.';
+
+  @override
+  String get wrongPassword => 'Неверный пароль. Пожалуйста, попробуйте еще раз.';
+
+  @override
+  String get userDisabled => 'Эта учетная запись была отключена. Пожалуйста, обратитесь в службу поддержки.';
+
+  @override
+  String get noAccount => 'Don\'t have an account?';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account?';
 }

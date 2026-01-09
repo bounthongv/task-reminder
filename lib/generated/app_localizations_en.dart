@@ -30,6 +30,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signInWithGoogle => 'Sign in with Google';
 
   @override
+  String get registerWithGoogle => 'Register with Google';
+
+  @override
   String get signInWithGooglePrompt => 'You can also sign in or create a new account with Google:';
 
   @override
@@ -257,4 +260,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get emailRequired => 'Email is required';
+
+  @override
+  String get invalidEmailFormat => 'Please enter a valid email address';
+
+  @override
+  String get emailAlreadyExists => 'This email is already registered in our system';
+
+  @override
+  String get emailAlreadyInUse => 'This email is already in use';
+
+  @override
+  String get weakPassword => 'Password is too weak. Please use a stronger password';
+
+  @override
+  String get invalidEmail => 'Please enter a valid email address';
+
+  @override
+  String get registrationError => 'Registration failed. Please try again';
+
+  @override
+  String get userNotFound => 'No account found with this email. Please check your email or register a new account.';
+
+  @override
+  String get wrongPassword => 'Incorrect password. Please try again.';
+
+  @override
+  String get userDisabled => 'This account has been disabled. Please contact support.';
+
+  @override
+  String get noAccount => 'Don\'t have an account?';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account?';
+
+  @override
+  String get notificationSound => 'Notification Sound';
+
+  @override
+  String get soundDefault => 'Default';
+
+  @override
+  String get soundChime => 'Chime';
+
+  @override
+  String get soundBeep => 'Beep';
 }

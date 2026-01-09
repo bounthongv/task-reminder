@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:task_reminder_flutter/generated/app_localizations.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -15,21 +16,81 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String? _errorMessage;
 
   Future<void> _registerWithEmailAndPassword() async {
+    final email = _emailController.text.trim();
+    final password = _passwordController.text.trim();
+
+    // Basic email format validation
+    if (!isValidEmail(email)) {
+      setState(() {
+        _errorMessage = 'Please enter a valid email address';
+      });
+      return;
+    }
+
+    // Check if email already exists in our system
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim(),
+      final usersSnapshot = await FirebaseFirestore.instance
+          .collection('users')
+          .where('email', isEqualTo: email.toLowerCase())
+          .limit(1)
+          .get();
+
+      if (usersSnapshot.docs.isNotEmpty) {
+        setState(() {
+          _errorMessage = 'This email is already registered in our system';
+        });
+        return;
+      }
+
+      // Attempt to create the user account
+      final userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+        email: email,
+        password: password,
       );
-      // Optionally, send email verification
+
+      // Add user data to Firestore users collection
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(userCredential.user!.uid)
+          .set({
+        'email': email.toLowerCase(),
+        'createdAt': FieldValue.serverTimestamp(),
+      });
+
+      // Send email verification
       final user = FirebaseAuth.instance.currentUser;
-      if (user != null && !user.emailVerified) {
+      if (user != null) {
         await user.sendEmailVerification();
       }
     } on FirebaseAuthException catch (e) {
+      String errorMessage = e.message ?? 'Unknown error occurred';
+
+      // Provide more user-friendly error messages
+      if (e.code == 'email-already-in-use') {
+        errorMessage = 'This email is already in use';
+      } else if (e.code == 'weak-password') {
+        errorMessage = 'Password is too weak. Please use a stronger password';
+      } else if (e.code == 'invalid-email') {
+        errorMessage = 'Please enter a valid email address';
+      }
+
       setState(() {
-        _errorMessage = e.message;
+        _errorMessage = errorMessage;
+      });
+    } catch (e) {
+      setState(() {
+        _errorMessage = 'Registration failed. Please try again';
       });
     }
+  }
+
+  // Helper method to validate email format
+  bool isValidEmail(String email) {
+    // Basic email regex pattern
+    const pattern = r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$';
+    final regex = RegExp(pattern);
+    return regex.hasMatch(email);
   }
 
   @override
@@ -41,9 +102,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Safely get localized strings with fallbacks
+    String getLocalized(String Function(AppLocalizations) getter, String fallback) {
+      try {
+        return getter(AppLocalizations.of(context)!);
+      } catch (e) {
+        return fallback;
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.register),
+        title: Text(getLocalized((l) => l.register, 'Register')),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -53,7 +123,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             TextField(
               controller: _emailController,
               decoration: InputDecoration(
-                labelText: AppLocalizations.of(context)!.email,
+                labelText: getLocalized((l) => l.email, 'Email'),
                 border: const OutlineInputBorder(),
               ),
               keyboardType: TextInputType.emailAddress,
@@ -62,7 +132,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             TextField(
               controller: _passwordController,
               decoration: InputDecoration(
-                labelText: AppLocalizations.of(context)!.password, // This should now work
+                labelText: getLocalized((l) => l.password, 'Password'),
                 border: const OutlineInputBorder(),
               ),
               obscureText: true,
@@ -76,7 +146,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: _registerWithEmailAndPassword,
-              child: Text(AppLocalizations.of(context)!.register),
+              child: Text(getLocalized((l) => l.register, 'Register')),
             ),
           ],
         ),

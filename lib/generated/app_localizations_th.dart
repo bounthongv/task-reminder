@@ -30,6 +30,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get signInWithGoogle => 'ลงชื่อเข้าใช้ด้วย Google';
 
   @override
+  String get registerWithGoogle => 'Register with Google';
+
+  @override
   String get signInWithGooglePrompt => 'คุณยังสามารถลงชื่อเข้าใช้หรือสร้างบัญชีใหม่ด้วย Google:';
 
   @override
@@ -257,4 +260,49 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get emailRequired => 'กรุณาระบุอีเมล';
+
+  @override
+  String get invalidEmailFormat => 'กรุณากรอกที่อยู่อีเมลที่ถูกต้อง';
+
+  @override
+  String get emailAlreadyExists => 'อีเมลนี้ได้ลงทะเบียนในระบบของเราแล้ว';
+
+  @override
+  String get emailAlreadyInUse => 'อีเมลนี้ถูกใช้งานอยู่แล้ว';
+
+  @override
+  String get weakPassword => 'รหัสผ่านอ่อนแอเกินไป กรุณาใช้รหัสผ่านที่รัดกุมกว่านี้';
+
+  @override
+  String get invalidEmail => 'กรุณากรอกที่อยู่อีเมลที่ถูกต้อง';
+
+  @override
+  String get registrationError => 'การลงทะเบียนล้มเหลว กรุณาลองอีกครั้ง';
+
+  @override
+  String get userNotFound => 'ไม่พบบัญชีที่ใช้อีเมลนี้ กรุณาตรวจสอบอีเมลของคุณหรือลงทะเบียนบัญชีใหม่';
+
+  @override
+  String get wrongPassword => 'รหัสผ่านไม่ถูกต้อง กรุณาลองอีกครั้ง';
+
+  @override
+  String get userDisabled => 'บัญชีนี้ถูกปิดใช้งานแล้ว กรุณาติดต่อฝ่ายสนับสนุน';
+
+  @override
+  String get noAccount => 'Don\'t have an account?';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account?';
+
+  @override
+  String get notificationSound => 'Notification Sound';
+
+  @override
+  String get soundDefault => 'Default';
+
+  @override
+  String get soundChime => 'Chime';
+
+  @override
+  String get soundBeep => 'Beep';
 }

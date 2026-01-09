@@ -1,6 +1,11 @@
+import 'package:task_reminder_flutter/services/notification_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:window_manager/window_manager.dart';
 import 'dart:async';
+import 'package:flutter/foundation.dart'; // For kIsWeb
+import 'dart:io'; // For Platform check
 import 'dart:convert';
-import 'dart:html' as html; // For web download functionality
+import 'package:task_reminder_flutter/utils/download_helper.dart'; // Conditional import
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -33,7 +38,7 @@ class TaskListScreen extends StatefulWidget {
   _TaskListScreenState createState() => _TaskListScreenState();
 }
 
-class _TaskListScreenState extends State<TaskListScreen> {
+class _TaskListScreenState extends State<TaskListScreen> with WindowListener {
   final _titleController = TextEditingController();
   final _descriptionController = TextEditingController();
   final _dueDateController = TextEditingController();
@@ -54,16 +59,52 @@ class _TaskListScreenState extends State<TaskListScreen> {
 
   // Audio player for notification sound
   final AudioPlayer _audioPlayer = AudioPlayer(); // Add this line
+  String _selectedSound = 'default';
 
   @override
   void initState() {
     super.initState();
+    if (!kIsWeb && (Platform.isWindows || Platform.isLinux || Platform.isMacOS)) {
+      windowManager.addListener(this);
+      _initWindowCloseHandler();
+    }
     // Start periodic task checking for notifications
     _startNotificationTimer();
+    _loadSelectedSound();
+  }
+
+  Future<void> _initWindowCloseHandler() async {
+    await windowManager.setPreventClose(true);
+  }
+
+  @override
+  void onWindowClose() async {
+    bool _isPreventClose = await windowManager.isPreventClose();
+    if (_isPreventClose) {
+      await windowManager.hide();
+    }
+  }
+  
+  Future<void> _loadSelectedSound() async {
+    final sound = await NotificationService().getSelectedSound();
+    setState(() {
+      _selectedSound = sound;
+    });
+  }
+
+  Future<void> _updateSelectedSound(String sound) async {
+    await NotificationService().setSelectedSound(sound);
+    setState(() {
+      _selectedSound = sound;
+    });
+    // Optional: Preview sound here
   }
 
   @override
   void dispose() {
+    if (!kIsWeb && (Platform.isWindows || Platform.isLinux || Platform.isMacOS)) {
+      windowManager.removeListener(this);
+    }
     _titleController.dispose();
     _descriptionController.dispose();
     _dueDateController.dispose();
@@ -105,7 +146,8 @@ class _TaskListScreenState extends State<TaskListScreen> {
         // Check if the task's due date falls within the current time window
         if (task.dueDate.isAfter(startWindow) && task.dueDate.isBefore(endWindow)) {
           // Play the notification sound
-          await _audioPlayer.play(AssetSource('sounds/notification.mp3')); // Adjust the filename to match your sound file
+          String soundToPlay = _selectedSound == 'default' ? 'notification' : _selectedSound;
+          await _audioPlayer.play(AssetSource('sounds/$soundToPlay.mp3')); 
           // Show a SnackBar to inform the user
           _scaffoldKey.currentState?.showSnackBar(
             SnackBar(
@@ -122,19 +164,6 @@ class _TaskListScreenState extends State<TaskListScreen> {
         ),
       );
     }
-  }
-
-  // Download tasks as a JSON file
-  void _downloadTasks(List<Task> tasks) {
-    final tasksJson = tasks.map((task) => task.toMap()).toList();
-    final jsonString = jsonEncode(tasksJson);
-    final bytes = utf8.encode(jsonString);
-    final blob = html.Blob([bytes]);
-    final url = html.Url.createObjectUrlFromBlob(blob);
-    final anchor = html.AnchorElement(href: url)
-      ..setAttribute('download', 'tasks.json')
-      ..click();
-    html.Url.revokeObjectUrl(url);
   }
 
   Future<void> _selectDueDate(BuildContext context) async {
@@ -469,6 +498,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
 
     return Scaffold(
       key: _scaffoldKey,
+      drawer: _buildDrawer(),
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.appTitle),
         actions: [
@@ -484,7 +514,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
               final tasks = snapshot.docs
                   .map((doc) => Task.fromMap(doc.id, doc.data()))
                   .toList();
-              _downloadTasks(tasks);
+              downloadTasks(tasks); // Updated to use helper
             },
             tooltip: AppLocalizations.of(context)!.downloadTasks,
           ),
@@ -610,7 +640,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
                               final tasks = snapshot.docs
                                   .map((doc) => Task.fromMap(doc.id, doc.data()))
                                   .toList();
-                              _downloadTasks(tasks);
+                              downloadTasks(tasks); // Updated to use helper
                             },
                             tooltip: AppLocalizations.of(context)!.downloadTasks,
                           ),
@@ -689,6 +719,45 @@ class _TaskListScreenState extends State<TaskListScreen> {
                 ],
               ),
             ),
+    );
+  }
+
+  Widget _buildDrawer() {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+           DrawerHeader(
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+            ),
+            child: Text(
+              AppLocalizations.of(context)!.appTitle,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+              ),
+            ),
+          ),
+          ListTile(
+            title: Text(AppLocalizations.of(context)!.notificationSound),
+            leading: const Icon(Icons.notifications_active),
+          ),
+          ...NotificationService.soundOptions.entries.map((entry) {
+             return RadioListTile<String>(
+              title: Text(entry.key),
+              value: entry.value,
+              groupValue: _selectedSound,
+              onChanged: (String? value) {
+                if (value != null) {
+                  _updateSelectedSound(value);
+                  Navigator.pop(context); // Close drawer
+                }
+              },
+            );
+          }),
+        ],
+      ),
     );
   }
 
