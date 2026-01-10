@@ -30,7 +30,7 @@ class AppLocalizationsLo extends AppLocalizations {
   String get signInWithGoogle => 'ເຂົ້າສູ່ລະບົບດ້ວຍ Google';
 
   @override
-  String get registerWithGoogle => 'Register with Google';
+  String get registerWithGoogle => 'ລົງທະບຽນດ້ວຍ Google';
 
   @override
   String get signInWithGooglePrompt => 'ທ່ານຍັງສາມາດເຂົ້າສູ່ລະບົບ ຫຼື ສ້າງບັນຊີໃໝ່ດ້ວຍ Google:';
@@ -289,20 +289,20 @@ class AppLocalizationsLo extends AppLocalizations {
   String get userDisabled => 'ບັນຊີນີ້ຖືກປິດໃຊ້ງານ. ກະລຸນາຕິດຕໍ່ຫາຝ່າຍບໍລິການລູກຄ້າ.';
 
   @override
-  String get noAccount => 'Don\'t have an account?';
+  String get noAccount => 'ຍັງບໍ່ທັນມີບັນຊີບໍ?';
 
   @override
-  String get alreadyHaveAccount => 'Already have an account?';
+  String get alreadyHaveAccount => 'ມີບັນຊີຢູ່ແລ້ວບໍ?';
 
   @override
-  String get notificationSound => 'Notification Sound';
+  String get notificationSound => 'ສຽງແຈ້ງເຕືອນ';
 
   @override
-  String get soundDefault => 'Default';
+  String get soundDefault => 'ຄ່າເລີ່ມຕົ້ນ';
 
   @override
-  String get soundChime => 'Chime';
+  String get soundChime => 'ສຽງກະດິ່ງ';
 
   @override
-  String get soundBeep => 'Beep';
+  String get soundBeep => 'ສຽງບີບ';
 }

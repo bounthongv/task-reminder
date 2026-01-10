@@ -1,38 +1,64 @@
-# Deployment Guide for Task Reminder
+# Deployment Guide
 
-## Project Details
-- **Firebase Project ID:** `taskreminder-480e9`
-- **Hosting URL:** [https://taskreminder-480e9.web.app](https://taskreminder-480e9.web.app)
-- **Configuration File:** `firebase.json` (Points to `build/web` as the public directory)
+## 1. Web Deployment (Firebase Hosting)
 
-## Prerequisites
-Ensure you have the Firebase CLI installed and are logged in:
-```bash
-npm install -g firebase-tools
-firebase login
-```
+### Prerequisites
+- Node.js and npm installed.
+- Firebase CLI installed: `npm install -g firebase-tools`
+- Logged into Firebase: `firebase login`
 
-## How to Deploy Updates
-
-1.  **Build the Flutter Web Application**
-    Compiles the project into static files located in `build/web`.
+### Steps
+1.  **Build the Web App:**
+    Generate the release build of your Flutter web app.
     ```bash
-    flutter build web --release
-    ```
-    *Note: If you encounter font or icon rendering issues, try the HTML renderer:*
-    ```bash
-    flutter build web --web-renderer html --release
+    flutter build web
     ```
 
-2.  **Deploy to Firebase Hosting**
-    Uploads the `build/web` directory to Firebase.
+2.  **Deploy:**
+    Deploy the built artifacts to Firebase Hosting.
     ```bash
     firebase deploy --only hosting
     ```
 
-## Troubleshooting
-- **"Command not found":** Ensure Flutter and Firebase CLI are added to your system PATH.
-- **Wrong Project:** If `firebase deploy` targets the wrong project, check `.firebaserc` or run:
+    *If you encounter issues with project selection, try:*
     ```bash
     firebase use taskreminder-480e9
+    firebase deploy --only hosting
+    ```
+if problem:
+  firebase login --reauth
+  firebase deploy --only hosting
+3.  **Access:**
+    Your app will be available at: `https://taskreminder-480e9.web.app`
+
+---
+
+## 2. Windows Desktop Build
+
+### Prerequisites
+- Visual Studio 2022 with "Desktop development with C++" workload.
+- Flutter configured for Windows: `flutter config --enable-windows-desktop`
+
+### Steps
+1.  **Build the Executable:**
+    ```bash
+    flutter build windows
+    ```
+
+2.  **Locate the File:**
+    Navigate to `build/windows/x64/runner/Release/`.
+    Run `task_reminder_flutter.exe`.
+
+3.  **Distribution:**
+    To distribute, you must copy the **entire** `Release` folder (containing the `.exe` and `.dll` files), not just the executable.
+
+---
+
+## 3. Localization
+
+To update translations:
+1.  Modify the `.arb` files in `lib/l10n/`.
+2.  Run the generator:
+    ```bash
+    flutter gen-l10n
     ```

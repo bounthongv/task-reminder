@@ -103,5 +103,12 @@
   "registrationError": "Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut",
   "userNotFound": "Kein Konto mit dieser E-Mail gefunden. Bitte überprüfen Sie Ihre E-Mail oder registrieren Sie ein neues Konto.",
   "wrongPassword": "Falsches Passwort. Bitte versuchen Sie es erneut.",
-  "userDisabled": "Dieses Konto wurde deaktiviert. Bitte wenden Sie sich an den Support."
+  "userDisabled": "Dieses Konto wurde deaktiviert. Bitte wenden Sie sich an den Support.",
+  "noAccount": "Noch kein Konto?",
+  "alreadyHaveAccount": "Bereits ein Konto?",
+  "registerWithGoogle": "Mit Google registrieren",
+  "notificationSound": "Benachrichtigungston",
+  "soundDefault": "Standard",
+  "soundChime": "Glockenspiel",
+  "soundBeep": "Piepton"
 }
