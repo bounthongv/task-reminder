@@ -30,6 +30,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get signInWithGoogle => 'Mit Google anmelden';
 
   @override
+  String get registerWithGoogle => 'Mit Google registrieren';
+
+  @override
   String get signInWithGooglePrompt => 'Sie können sich auch mit Google anmelden oder ein neues Konto erstellen:';
 
   @override
@@ -286,8 +289,20 @@ class AppLocalizationsDe extends AppLocalizations {
   String get userDisabled => 'Dieses Konto wurde deaktiviert. Bitte wenden Sie sich an den Support.';
 
   @override
-  String get noAccount => 'Don\'t have an account?';
+  String get noAccount => 'Noch kein Konto?';
 
   @override
-  String get alreadyHaveAccount => 'Already have an account?';
+  String get alreadyHaveAccount => 'Bereits ein Konto?';
+
+  @override
+  String get notificationSound => 'Benachrichtigungston';
+
+  @override
+  String get soundDefault => 'Standard';
+
+  @override
+  String get soundChime => 'Glockenspiel';
+
+  @override
+  String get soundBeep => 'Piepton';
 }

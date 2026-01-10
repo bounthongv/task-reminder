@@ -143,6 +143,12 @@ abstract class AppLocalizations {
   /// **'Sign in with Google'**
   String get signInWithGoogle;
 
+  /// No description provided for @registerWithGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Register with Google'**
+  String get registerWithGoogle;
+
   /// No description provided for @signInWithGooglePrompt.
   ///
   /// In en, this message translates to:
@@ -658,6 +664,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Already have an account?'**
   String get alreadyHaveAccount;
+
+  /// No description provided for @notificationSound.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification Sound'**
+  String get notificationSound;
+
+  /// No description provided for @soundDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'Default'**
+  String get soundDefault;
+
+  /// No description provided for @soundChime.
+  ///
+  /// In en, this message translates to:
+  /// **'Chime'**
+  String get soundChime;
+
+  /// No description provided for @soundBeep.
+  ///
+  /// In en, this message translates to:
+  /// **'Beep'**
+  String get soundBeep;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

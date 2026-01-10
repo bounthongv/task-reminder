@@ -30,6 +30,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signInWithGoogle => 'Sign in with Google';
 
   @override
+  String get registerWithGoogle => 'Register with Google';
+
+  @override
   String get signInWithGooglePrompt => 'You can also sign in or create a new account with Google:';
 
   @override
@@ -290,4 +293,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get alreadyHaveAccount => 'Already have an account?';
+
+  @override
+  String get notificationSound => 'Notification Sound';
+
+  @override
+  String get soundDefault => 'Default';
+
+  @override
+  String get soundChime => 'Chime';
+
+  @override
+  String get soundBeep => 'Beep';
 }

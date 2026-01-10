@@ -30,8 +30,10 @@ class AppLocalizationsLo extends AppLocalizations {
   String get signInWithGoogle => 'ເຂົ້າສູ່ລະບົບດ້ວຍ Google';
 
   @override
-  String get signInWithGooglePrompt =>
-      'ທ່ານຍັງສາມາດເຂົ້າສູ່ລະບົບ ຫຼື ສ້າງບັນຊີໃໝ່ດ້ວຍ Google:';
+  String get registerWithGoogle => 'ລົງທະບຽນດ້ວຍ Google';
+
+  @override
+  String get signInWithGooglePrompt => 'ທ່ານຍັງສາມາດເຂົ້າສູ່ລະບົບ ຫຼື ສ້າງບັນຊີໃໝ່ດ້ວຍ Google:';
 
   @override
   String get theme => 'ຮູບແບບ';
@@ -157,8 +159,7 @@ class AppLocalizationsLo extends AppLocalizations {
   String get downloadWebOnly => 'ການດາວໂຫຼດສາມາດໃຊ້ໄດ້ສະເພາະໃນເວັບເທົ່ານັ້ນ';
 
   @override
-  String get invalidDateFormat =>
-      'ຮູບແບບວັນທີ່ບໍ່ຖືກຕ້ອງ! ໃຊ້ YYYY-MM-DD HH:MM';
+  String get invalidDateFormat => 'ຮູບແບບວັນທີ່ບໍ່ຖືກຕ້ອງ! ໃຊ້ YYYY-MM-DD HH:MM';
 
   @override
   String get editTask => 'ແກ້ໄຂວຽກ';
@@ -198,8 +199,7 @@ class AppLocalizationsLo extends AppLocalizations {
   String get failedToSignOut => 'ບໍ່ສາມາດອອກຈາກລະບົບໄດ້. ກະລຸນາລອງໃໝ່.';
 
   @override
-  String get accountExistsError =>
-      'ບັນຊີທີ່ໃຊ້ອີເມວນີ້ມີຢູ່ແລ້ວ. ກະລຸນາເຂົ້າສູ່ລະບົບ ຫຼື ເຊື່ອມໂຍງບັນຊີຂອງທ່ານ.';
+  String get accountExistsError => 'ບັນຊີທີ່ໃຊ້ອີເມວນີ້ມີຢູ່ແລ້ວ. ກະລຸນາເຂົ້າສູ່ລະບົບ ຫຼື ເຊື່ອມໂຍງບັນຊີຂອງທ່ານ.';
 
   @override
   String get filterBy => 'ກັ່ນຕອງຕາມ';
@@ -256,8 +256,7 @@ class AppLocalizationsLo extends AppLocalizations {
   String get sendResetLink => 'ສົ່ງລິ້ງຕັ້ງຄ່າໃໝ່';
 
   @override
-  String get failedToSendResetEmail =>
-      'ບໍ່ສາມາດສົ່ງອີເມວຕັ້ງຄ່າໃໝ່ໄດ້. ກະລຸນາກວດສອບອີເມວຂອງທ່ານ.';
+  String get failedToSendResetEmail => 'ບໍ່ສາມາດສົ່ງອີເມວຕັ້ງຄ່າໃໝ່ໄດ້. ກະລຸນາກວດສອບອີເມວຂອງທ່ານ.';
 
   @override
   String get emailRequired => 'ຕ້ອງການອີເມວ';
@@ -272,8 +271,7 @@ class AppLocalizationsLo extends AppLocalizations {
   String get emailAlreadyInUse => 'ອີເມວນີ້ຖືກນຳໃຊ້ແລ້ວ';
 
   @override
-  String get weakPassword =>
-      'ລະຫັດຜ່ານອ່ອນແອເກີນໄປ. ກະລຸນາໃຊ້ລະຫັດຜ່ານທີ່ຮັດແຮງກ່ວາ';
+  String get weakPassword => 'ລະຫັດຜ່ານອ່ອນແອເກີນໄປ. ກະລຸນາໃຊ້ລະຫັດຜ່ານທີ່ຮັດແຮງກ່ວາ';
 
   @override
   String get invalidEmail => 'ກະລຸນາໃສ່ທີ່ຢູ່ອີເມວທີ່ຖືກຕ້ອງ';
@@ -282,19 +280,29 @@ class AppLocalizationsLo extends AppLocalizations {
   String get registrationError => 'ການລົງທະບຽນລົ້ມເຫຼວ. ກະລຸນາລອງໃໝ່';
 
   @override
-  String get userNotFound =>
-      'ບໍ່ພົບບັນຊີທີ່ໃຊ້ອີເມວນີ້. ກະລຸນາກວດສອບອີເມວຂອງທ່ານ ຫຼື ລົງທະບຽນບັນຊີໃໝ່.';
+  String get userNotFound => 'ບໍ່ພົບບັນຊີທີ່ໃຊ້ອີເມວນີ້. ກະລຸນາກວດສອບອີເມວຂອງທ່ານ ຫຼື ລົງທະບຽນບັນຊີໃໝ່.';
 
   @override
   String get wrongPassword => 'ລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ. ກະລຸນາລອງໃໝ່.';
 
   @override
-  String get userDisabled =>
-      'ບັນຊີນີ້ຖືກປິດໃຊ້ງານ. ກະລຸນາຕິດຕໍ່ຫາຝ່າຍບໍລິການລູກຄ້າ.';
+  String get userDisabled => 'ບັນຊີນີ້ຖືກປິດໃຊ້ງານ. ກະລຸນາຕິດຕໍ່ຫາຝ່າຍບໍລິການລູກຄ້າ.';
 
   @override
-  String get noAccount => 'ຍັງບໍ່ໄດ້ລົງທະບຽນ?';
+  String get noAccount => 'ຍັງບໍ່ທັນມີບັນຊີບໍ?';
 
   @override
-  String get alreadyHaveAccount => 'ລົງທະບຽນແລ້ວ?';
+  String get alreadyHaveAccount => 'ມີບັນຊີຢູ່ແລ້ວບໍ?';
+
+  @override
+  String get notificationSound => 'ສຽງແຈ້ງເຕືອນ';
+
+  @override
+  String get soundDefault => 'ຄ່າເລີ່ມຕົ້ນ';
+
+  @override
+  String get soundChime => 'ສຽງກະດິ່ງ';
+
+  @override
+  String get soundBeep => 'ສຽງບີບ';
 }

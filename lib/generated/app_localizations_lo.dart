@@ -21,7 +21,7 @@ class AppLocalizationsLo extends AppLocalizations {
   String get register => 'ລົງທະບຽນ';
 
   @override
-  String get email => 'อีเมล';
+  String get email => 'ອີເມລ';
 
   @override
   String get password => 'ລະຫັດຜ່ານ';

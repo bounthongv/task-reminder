@@ -30,6 +30,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get signInWithGoogle => 'Войти через Google';
 
   @override
+  String get registerWithGoogle => 'Регистрация через Google';
+
+  @override
   String get signInWithGooglePrompt => 'Вы также можете войти или создать аккаунт через Google:';
 
   @override
@@ -286,8 +289,20 @@ class AppLocalizationsRu extends AppLocalizations {
   String get userDisabled => 'Эта учетная запись была отключена. Пожалуйста, обратитесь в службу поддержки.';
 
   @override
-  String get noAccount => 'Don\'t have an account?';
+  String get noAccount => 'Нет аккаунта?';
 
   @override
-  String get alreadyHaveAccount => 'Already have an account?';
+  String get alreadyHaveAccount => 'Уже есть аккаунт?';
+
+  @override
+  String get notificationSound => 'Звук уведомления';
+
+  @override
+  String get soundDefault => 'По умолчанию';
+
+  @override
+  String get soundChime => 'Перезвон';
+
+  @override
+  String get soundBeep => 'Гудок';
 }

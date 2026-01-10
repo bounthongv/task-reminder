@@ -3,7 +3,7 @@
   "welcomeMessage": "ຍິນດີຕ້ອນຮັບສູ່ເຕືອນຄວາມຈຳກ່ຽວກັບວຽກ",
   "login": "ເຂົ້າສູ່ລະບົບ",
   "register": "ລົງທະບຽນ",
-  "email": "อีเมล",
+  "email": "ອີເມລ",
   "password": "ລະຫັດຜ່ານ",
   "signInWithGoogle": "ເຂົ້າສູ່ລະບົບດ້ວຍ Google",
   "signInWithGooglePrompt": "ທ່ານຍັງສາມາດເຂົ້າສູ່ລະບົບ ຫຼື ສ້າງບັນຊີໃໝ່ດ້ວຍ Google:",

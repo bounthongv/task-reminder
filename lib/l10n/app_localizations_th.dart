@@ -30,6 +30,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get signInWithGoogle => 'ลงชื่อเข้าใช้ด้วย Google';
 
   @override
+  String get registerWithGoogle => 'ลงทะเบียนด้วย Google';
+
+  @override
   String get signInWithGooglePrompt => 'คุณยังสามารถลงชื่อเข้าใช้หรือสร้างบัญชีใหม่ด้วย Google:';
 
   @override
@@ -286,8 +289,20 @@ class AppLocalizationsTh extends AppLocalizations {
   String get userDisabled => 'บัญชีนี้ถูกปิดใช้งานแล้ว กรุณาติดต่อฝ่ายสนับสนุน';
 
   @override
-  String get noAccount => 'Don\'t have an account?';
+  String get noAccount => 'ยังไม่มีบัญชีใช่ไหม?';
 
   @override
-  String get alreadyHaveAccount => 'Already have an account?';
+  String get alreadyHaveAccount => 'มีบัญชีอยู่แล้วใช่ไหม?';
+
+  @override
+  String get notificationSound => 'เสียงแจ้งเตือน';
+
+  @override
+  String get soundDefault => 'ค่าเริ่มต้น';
+
+  @override
+  String get soundChime => 'เสียงกระดิ่ง';
+
+  @override
+  String get soundBeep => 'เสียงบี๊บ';
 }
