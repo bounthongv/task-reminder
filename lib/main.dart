@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:task_reminder_flutter/generated/app_localizations.dart';
 import 'package:task_reminder_flutter/providers/theme_provider.dart';
 import 'package:task_reminder_flutter/providers/locale_provider.dart';
+import 'package:task_reminder_flutter/providers/user_provider.dart';
 import 'package:task_reminder_flutter/screens/task_list_screen.dart';
 import 'package:task_reminder_flutter/screens/login_screen.dart';
 
@@ -56,6 +57,7 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => UserProvider()),
         ChangeNotifierProvider(create: (_) => ThemeProvider(ThemeOption.ocean)),
         ChangeNotifierProvider(create: (_) => LocaleProvider()),
       ],

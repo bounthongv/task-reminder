@@ -305,4 +305,121 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get soundBeep => 'เสียงบี๊บ';
+
+  @override
+  String get supportAndPremium => 'Support & Premium';
+
+  @override
+  String get chooseYourPlan => 'Choose Your Plan';
+
+  @override
+  String get freeTier => 'Free Tier';
+
+  @override
+  String get proTier => 'Pro Tier';
+
+  @override
+  String get active => 'Active';
+
+  @override
+  String get directSupport => 'Direct Support';
+
+  @override
+  String get buyMeACoffee => 'Buy me a coffee';
+
+  @override
+  String get buyMeACoffeeSubtitle => 'A one-time small donation to help keep the app running.';
+
+  @override
+  String get yourCurrentStatus => 'Your Current Status';
+
+  @override
+  String get selectPaymentMethod => 'Select Payment Method';
+
+  @override
+  String get creditDebitCard => 'Credit / Debit Card (Stripe)';
+
+  @override
+  String get internationalPayment => 'International payment';
+
+  @override
+  String get localQrCode => 'Local QR Code / Bank Transfer';
+
+  @override
+  String get preferredForLao => 'Preferred for Lao market';
+
+  @override
+  String get completingPayment => 'Completing Payment';
+
+  @override
+  String get stripePaymentDescription => 'A browser window has opened for you to complete the payment securely via Stripe.\n\nSince this is a BuyMeACoffee link, please upload your proof of payment (screenshot) so we can verify it.';
+
+  @override
+  String get sendProofViaEmail => 'Send Proof via Email';
+
+  @override
+  String get iHavePaid => 'I have paid';
+
+  @override
+  String get paymentConfirmationSent => 'Payment confirmation sent! Upgrading tier...';
+
+  @override
+  String get scanToPay => 'Scan to Pay';
+
+  @override
+  String get scanQrDescription => 'Scan this QR code with your banking app to support the developer.';
+
+  @override
+  String get addQrCodeInstruction => 'Please add your bank QR as \'assets/images/qr_code.png\'';
+
+  @override
+  String get upgradeProcessing => 'Once paid, your account will be upgraded within 24 hours.';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get premiumFeature => 'Premium Feature';
+
+  @override
+  String get premiumFeatureDescription => 'This theme is a premium feature. Please support the developer to unlock all themes and features!';
+
+  @override
+  String get maybeLater => 'Maybe Later';
+
+  @override
+  String get supportNow => 'Support Now';
+
+  @override
+  String get proFeature => 'Pro Feature';
+
+  @override
+  String get recurringTaskLimitMessage => 'You\'ve reached the limit of 3 active recurring tasks for the free tier. Please support the developer to add unlimited recurring tasks!';
+
+  @override
+  String get couldNotLaunchPayment => 'Could not launch payment page';
+
+  @override
+  String get couldNotOpenEmail => 'Could not open email client. Please email support@taskreminder.com';
+
+  @override
+  String get featureStandardThemes => 'Standard Themes';
+
+  @override
+  String get featureBasicNotifications => 'Basic Notifications';
+
+  @override
+  String get featureRecurringLimit => 'Up to 3 Recurring Tasks';
+
+  @override
+  String get featurePremiumThemes => 'Premium Themes (Ocean, Forest, Sunset)';
+
+  @override
+  String get featureUnlimitedRecurring => 'Unlimited Recurring Tasks';
+
+  @override
+  String get featureCustomSounds => 'Custom Notification Sounds';
+
+  @override
+  String get featurePrioritySupport => 'Priority Support';
 }

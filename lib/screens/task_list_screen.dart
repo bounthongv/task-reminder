@@ -14,9 +14,12 @@ import 'package:google_sign_in/google_sign_in.dart'; // Add for Google Sign-In l
 import 'package:task_reminder_flutter/generated/app_localizations.dart';
 import '../providers/theme_provider.dart';
 import '../providers/locale_provider.dart';
+import '../providers/user_provider.dart';
 import '../models/task.dart';
 import 'package:intl/intl.dart'; // For date formatting
 import 'package:audioplayers/audioplayers.dart'; // For audio player functionality
+
+import 'package:task_reminder_flutter/screens/support_screen.dart';
 
 // Enums for sorting and filtering
 enum SortOption { dueDate, status, title }
@@ -198,6 +201,11 @@ class _TaskListScreenState extends State<TaskListScreen> with WindowListener {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null || _selectedDueDate == null) return;
 
+    if (_isRepeated) {
+      bool canAdd = await _checkRecurringTaskLimit();
+      if (!canAdd) return;
+    }
+
     try {
       final task = Task(
         id: '', // Will be set by Firestore
@@ -243,6 +251,11 @@ class _TaskListScreenState extends State<TaskListScreen> with WindowListener {
   }
 
   Future<void> _updateTask(Task task) async {
+    if (_isRepeated && !task.isRepeated) {
+      bool canAdd = await _checkRecurringTaskLimit();
+      if (!canAdd) return;
+    }
+
     try {
       final updatedTask = Task(
         id: task.id,
@@ -313,6 +326,56 @@ class _TaskListScreenState extends State<TaskListScreen> with WindowListener {
         ),
       );
     }
+  }
+
+  Future<bool> _checkRecurringTaskLimit() async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    if (userProvider.isPremium) return true;
+
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return false;
+
+    final snapshot = await FirebaseFirestore.instance
+        .collection('tasks')
+        .where('userId', isEqualTo: user.uid)
+        .where('isRepeated', isEqualTo: true)
+        .where('completed', isEqualTo: false)
+        .get();
+
+    if (snapshot.docs.length >= 3) {
+      _showPremiumLimitDialog(AppLocalizations.of(context)!.recurringTaskLimitMessage);
+      return false;
+    }
+    return true;
+  }
+
+  void _showPremiumLimitDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Row(
+          children: [
+            const Icon(Icons.star, color: Colors.amber),
+            const SizedBox(width: 10),
+            Text(AppLocalizations.of(context)!.proFeature),
+          ],
+        ),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(AppLocalizations.of(context)!.maybeLater),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _showSupportOptions();
+            },
+            child: Text(AppLocalizations.of(context)!.supportNow),
+          ),
+        ],
+      ),
+    );
   }
 
   Future<void> _logout() async {
@@ -762,15 +825,24 @@ class _TaskListScreenState extends State<TaskListScreen> with WindowListener {
   }
 
   Widget _buildThemeDropdown() {
+    final userProvider = Provider.of<UserProvider>(context);
+    
     return DropdownButton<ThemeOption>(
       value: widget.currentTheme,
       onChanged: (ThemeOption? newTheme) {
         if (newTheme != null) {
-          widget.onThemeChanged(newTheme);
+          if (ThemeProvider.isThemePremium(newTheme) && !userProvider.isPremium) {
+            _showPremiumDialog();
+          } else {
+            widget.onThemeChanged(newTheme);
+          }
         }
       },
       items: ThemeOption.values.map((ThemeOption theme) {
         String label;
+        bool isPremium = ThemeProvider.isThemePremium(theme);
+        bool locked = isPremium && !userProvider.isPremium;
+        
         switch (theme) {
           case ThemeOption.system:
             label = AppLocalizations.of(context)!.systemTheme;
@@ -793,9 +865,60 @@ class _TaskListScreenState extends State<TaskListScreen> with WindowListener {
         }
         return DropdownMenuItem<ThemeOption>(
           value: theme,
-          child: Text(label),
+          child: Row(
+            children: [
+              Text(label),
+              if (locked) ...[
+                const SizedBox(width: 8),
+                const Icon(Icons.lock, size: 16, color: Colors.grey),
+              ] else if (isPremium) ...[
+                const SizedBox(width: 8),
+                const Icon(Icons.star, size: 16, color: Colors.amber),
+              ],
+            ],
+          ),
         );
       }).toList(),
+    );
+  }
+
+  void _showPremiumDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Row(
+          children: [
+            const Icon(Icons.star, color: Colors.amber),
+            const SizedBox(width: 10),
+            Text(AppLocalizations.of(context)!.premiumFeature),
+          ],
+        ),
+        content: Text(
+            AppLocalizations.of(context)!.premiumFeatureDescription),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(AppLocalizations.of(context)!.maybeLater),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              // In a real app, this would lead to a payment screen
+              // For now, let's allow "unlocking" for testing if you want, 
+              // or just close and say "Coming soon"
+              Navigator.pop(context);
+              _showSupportOptions();
+            },
+            child: Text(AppLocalizations.of(context)!.supportNow),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showSupportOptions() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const SupportScreen()),
     );
   }
 

@@ -21,7 +21,7 @@ import 'app_localizations_th.dart';
 /// `supportedLocales` list. For example:
 ///
 /// ```dart
-/// import 'generated/app_localizations.dart';
+/// import 'l10n/app_localizations.dart';
 ///
 /// return MaterialApp(
 ///   localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -688,6 +688,240 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Beep'**
   String get soundBeep;
+
+  /// No description provided for @supportAndPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'Support & Premium'**
+  String get supportAndPremium;
+
+  /// No description provided for @chooseYourPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Your Plan'**
+  String get chooseYourPlan;
+
+  /// No description provided for @freeTier.
+  ///
+  /// In en, this message translates to:
+  /// **'Free Tier'**
+  String get freeTier;
+
+  /// No description provided for @proTier.
+  ///
+  /// In en, this message translates to:
+  /// **'Pro Tier'**
+  String get proTier;
+
+  /// No description provided for @active.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get active;
+
+  /// No description provided for @directSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct Support'**
+  String get directSupport;
+
+  /// No description provided for @buyMeACoffee.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy me a coffee'**
+  String get buyMeACoffee;
+
+  /// No description provided for @buyMeACoffeeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'A one-time small donation to help keep the app running.'**
+  String get buyMeACoffeeSubtitle;
+
+  /// No description provided for @yourCurrentStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Current Status'**
+  String get yourCurrentStatus;
+
+  /// No description provided for @selectPaymentMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Payment Method'**
+  String get selectPaymentMethod;
+
+  /// No description provided for @creditDebitCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Credit / Debit Card (Stripe)'**
+  String get creditDebitCard;
+
+  /// No description provided for @internationalPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'International payment'**
+  String get internationalPayment;
+
+  /// No description provided for @localQrCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Local QR Code / Bank Transfer'**
+  String get localQrCode;
+
+  /// No description provided for @preferredForLao.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferred for Lao market'**
+  String get preferredForLao;
+
+  /// No description provided for @completingPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Completing Payment'**
+  String get completingPayment;
+
+  /// No description provided for @stripePaymentDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A browser window has opened for you to complete the payment securely via Stripe.\n\nSince this is a BuyMeACoffee link, please upload your proof of payment (screenshot) so we can verify it.'**
+  String get stripePaymentDescription;
+
+  /// No description provided for @sendProofViaEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Proof via Email'**
+  String get sendProofViaEmail;
+
+  /// No description provided for @iHavePaid.
+  ///
+  /// In en, this message translates to:
+  /// **'I have paid'**
+  String get iHavePaid;
+
+  /// No description provided for @paymentConfirmationSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment confirmation sent! Upgrading tier...'**
+  String get paymentConfirmationSent;
+
+  /// No description provided for @scanToPay.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan to Pay'**
+  String get scanToPay;
+
+  /// No description provided for @scanQrDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan this QR code with your banking app to support the developer.'**
+  String get scanQrDescription;
+
+  /// No description provided for @addQrCodeInstruction.
+  ///
+  /// In en, this message translates to:
+  /// **'Please add your bank QR as \'assets/images/qr_code.png\''**
+  String get addQrCodeInstruction;
+
+  /// No description provided for @upgradeProcessing.
+  ///
+  /// In en, this message translates to:
+  /// **'Once paid, your account will be upgraded within 24 hours.'**
+  String get upgradeProcessing;
+
+  /// No description provided for @close.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get close;
+
+  /// No description provided for @premiumFeature.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium Feature'**
+  String get premiumFeature;
+
+  /// No description provided for @premiumFeatureDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'This theme is a premium feature. Please support the developer to unlock all themes and features!'**
+  String get premiumFeatureDescription;
+
+  /// No description provided for @maybeLater.
+  ///
+  /// In en, this message translates to:
+  /// **'Maybe Later'**
+  String get maybeLater;
+
+  /// No description provided for @supportNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Support Now'**
+  String get supportNow;
+
+  /// No description provided for @proFeature.
+  ///
+  /// In en, this message translates to:
+  /// **'Pro Feature'**
+  String get proFeature;
+
+  /// No description provided for @recurringTaskLimitMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve reached the limit of 3 active recurring tasks for the free tier. Please support the developer to add unlimited recurring tasks!'**
+  String get recurringTaskLimitMessage;
+
+  /// No description provided for @couldNotLaunchPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not launch payment page'**
+  String get couldNotLaunchPayment;
+
+  /// No description provided for @couldNotOpenEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open email client. Please email support@taskreminder.com'**
+  String get couldNotOpenEmail;
+
+  /// No description provided for @featureStandardThemes.
+  ///
+  /// In en, this message translates to:
+  /// **'Standard Themes'**
+  String get featureStandardThemes;
+
+  /// No description provided for @featureBasicNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic Notifications'**
+  String get featureBasicNotifications;
+
+  /// No description provided for @featureRecurringLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Up to 3 Recurring Tasks'**
+  String get featureRecurringLimit;
+
+  /// No description provided for @featurePremiumThemes.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium Themes (Ocean, Forest, Sunset)'**
+  String get featurePremiumThemes;
+
+  /// No description provided for @featureUnlimitedRecurring.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited Recurring Tasks'**
+  String get featureUnlimitedRecurring;
+
+  /// No description provided for @featureCustomSounds.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom Notification Sounds'**
+  String get featureCustomSounds;
+
+  /// No description provided for @featurePrioritySupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority Support'**
+  String get featurePrioritySupport;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

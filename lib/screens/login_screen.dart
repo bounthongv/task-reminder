@@ -8,6 +8,8 @@ import 'package:provider/provider.dart';
 import 'package:task_reminder_flutter/generated/app_localizations.dart';
 import '../providers/theme_provider.dart';
 import '../providers/locale_provider.dart';
+import '../providers/user_provider.dart';
+import 'support_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   final ValueChanged<ThemeOption> onThemeChanged;
@@ -413,16 +415,25 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _buildThemeDropdown(BuildContext context) {
+    final userProvider = Provider.of<UserProvider>(context);
+    
     return DropdownButton<ThemeOption>(
       value: widget.currentTheme,
       onChanged: (ThemeOption? newTheme) {
         if (newTheme != null) {
-          widget.onThemeChanged(newTheme);
+          if (ThemeProvider.isThemePremium(newTheme) && !userProvider.isPremium) {
+            _showPremiumDialog(context);
+          } else {
+            widget.onThemeChanged(newTheme);
+          }
         }
       },
       items: ThemeOption.values.map((ThemeOption theme) {
         String label;
         final l10n = AppLocalizations.of(context)!;
+        bool isPremium = ThemeProvider.isThemePremium(theme);
+        bool locked = isPremium && !userProvider.isPremium;
+        
         switch (theme) {
           case ThemeOption.system:
             label = l10n.systemTheme;
@@ -445,9 +456,57 @@ class _LoginScreenState extends State<LoginScreen> {
         }
         return DropdownMenuItem<ThemeOption>(
           value: theme,
-          child: Text(label),
+          child: Row(
+            children: [
+              Text(label),
+              if (locked) ...[
+                const SizedBox(width: 8),
+                const Icon(Icons.lock, size: 16, color: Colors.grey),
+              ] else if (isPremium) ...[
+                const SizedBox(width: 8),
+                const Icon(Icons.star, size: 16, color: Colors.amber),
+              ],
+            ],
+          ),
         );
       }).toList(),
+    );
+  }
+
+  void _showPremiumDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Row(
+          children: [
+            const Icon(Icons.star, color: Colors.amber),
+            const SizedBox(width: 10),
+            Text(AppLocalizations.of(context)!.premiumFeature),
+          ],
+        ),
+        content: Text(
+            AppLocalizations.of(context)!.premiumFeatureDescription),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(AppLocalizations.of(context)!.maybeLater),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _showSupportOptions(context);
+            },
+            child: Text(AppLocalizations.of(context)!.supportNow),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showSupportOptions(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const SupportScreen()),
     );
   }
 

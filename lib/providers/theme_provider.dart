@@ -144,4 +144,10 @@ class ThemeProvider with ChangeNotifier {
         return ThemeMode.dark;
     }
   }
+
+  static bool isThemePremium(ThemeOption option) {
+    return option == ThemeOption.ocean ||
+        option == ThemeOption.forest ||
+        option == ThemeOption.sunset;
+  }
 }
